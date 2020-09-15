@@ -34,8 +34,5 @@ end
 
   def void_last_transaction
     @total -= @price
-    if @total = []
-      return 0.0
   end
-end
 end
