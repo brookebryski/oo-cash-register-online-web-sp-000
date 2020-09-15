@@ -20,6 +20,7 @@ end
       else
         @items << title
       end
+      last_transaction = price * quantity
    end
 
   def apply_discount
@@ -30,10 +31,11 @@ end
   else
     return "There is no discount to apply."
   end
+  
 end
 
 def void_last_transaction
-    @total -= @price
+    @total -= last_transaction
   end
 
 end
