@@ -20,9 +20,6 @@ end
       else
         @items << title
       end
-      @total += price*quantity
-     @last_transaction_amount = @total
-     @total
    end
 
   def apply_discount
@@ -35,9 +32,8 @@ end
   end
 end
 
-
-def void_last_transaction()
-  @total -= @last_transaction_amount
-end
+def void_last_transaction
+    @total -= @price
+  end
 
 end
