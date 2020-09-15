@@ -8,7 +8,7 @@ def initialize(discount = 0)
   @items = []
 end
 
-  def add_item(title, price,quantity = 1)
+  def add_item(title, price, quantity = 1)
     @price = price
     @total += price * quantity
     if quantity > 1
@@ -20,7 +20,10 @@ end
       else
         @items << title
       end
-    end
+      @total += price*quantity
+     @last_transaction_amount = @total
+     @total
+   end
 
   def apply_discount
     if @discount > 0
@@ -32,7 +35,9 @@ end
   end
 end
 
-  def void_last_transaction
-    @total -= @price
-  end
+
+def void_last_transaction()
+  @total -= @last_transaction_amount
+end
+
 end
