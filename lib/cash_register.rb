@@ -10,7 +10,7 @@ end
 
   def add_item(title, price, quantity = 1)
     @price = price
-    @total += price * quantity
+    self.total += price * quantity
     if quantity > 1
         counter = 0
         while counter < quantity
@@ -20,13 +20,13 @@ end
       else
         @items << title
       end
-      last_transaction = price * quantity
+      self.last_transaction = price * quantity
    end
 
   def apply_discount
     if @discount > 0
     @reduction = (@price * discount)/100
-    @total -= @reduction
+    self.total -= @reduction
     return "After the discount, the total comes to $#{total}."
   else
     return "There is no discount to apply."
@@ -35,7 +35,7 @@ end
 end
 
 def void_last_transaction
-    @total -= last_transaction
+    self.total -= self.last_transaction
   end
 
 end
